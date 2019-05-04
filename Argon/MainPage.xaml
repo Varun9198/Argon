@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="Argon.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Argon"
+    xmlns:model="using:Argon.Model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        
+        <NavigationView x:Name="NavigationPanel" SelectionChanged="NavigationView_SelectionChanged" >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Videos" x:Name="videos" Tag="1" Icon="Video">
+                    <NavigationViewItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="V" Modifiers="Shift"/>
+                    </NavigationViewItem.KeyboardAccelerators>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Music" x:Name="music" Tag="2" Icon="Audio">
+                    <NavigationViewItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="M" Modifiers="Shift"/>
+                    </NavigationViewItem.KeyboardAccelerators>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <!--GridView Grid.Column="4" ItemTemplate="{StaticResource Media}" x:Name="FileHolder" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top" Height="877" ItemClick="FileHolder_ItemClick" IsItemClickEnabled="True"/-->
+            <Frame x:Name="ContentFrame" IsTabStop="True"/>
+        </NavigationView>
+
+    </Grid>
+</Page>
